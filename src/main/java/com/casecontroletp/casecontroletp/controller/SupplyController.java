@@ -40,9 +40,8 @@ public class SupplyController {
             }
         }
     
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         String formattedDate = abastecimento.getDataHora().format(formatter);
-        abastecimento.setDataHoraFormatted(formattedDate); // Definir o valor formatado
     
         // Salvar o objeto no repositório
         return supplyRepository.save(abastecimento);
